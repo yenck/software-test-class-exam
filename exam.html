@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+window.onload = function () {
+	var buttonZone = document.getElementById("buttonZone");
+	for (i = 0; i <= 9; i++){
+		var button = document.createElement("button");
+		button.setAttribute("class", "button");
+		button.setAttribute("name", i);
+		button.setAttribute("onclick", "add(" + i + ")");
+		button.setAttribute("style", "font-size: 30px;padding-top: 4%;padding-bottom: 4%;padding-left: 4%;padding-right: 4%");
+		var t = document.createTextNode(i);
+		button.appendChild(t);
+		buttonZone.appendChild(button);
+	}
+}
+function add(value){
+	var paraID = document.getElementById("showID");
+	paraID.innerText += value;
+	
+	var enter = document.getElementById("enter");
+	var id = enter.getAttribute("name");
+	console.log(id);
+	enter.setAttribute("name", id + value);
+}
+</script>
+</head>
+<body>
+<p id="showID" style="font-size: 30px;">Id: </p>
+<div id="buttonZone"></div></br>
+<button id="enter" name="" style="font-size: 30px;padding-top: 4%;padding-bottom: 4%;padding-left: 4%;padding-right: 4%");">enter</button>
+</body>
+</html>
